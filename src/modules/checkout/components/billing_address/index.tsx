@@ -57,7 +57,7 @@ const BillingAddress = ({
           autoComplete="given-name"
           value={formData["billing_address.first_name"]}
           onChange={handleChange}
-          required
+          
         />
         <Input
           label="Last name"
@@ -65,7 +65,7 @@ const BillingAddress = ({
           autoComplete="family-name"
           value={formData["billing_address.last_name"]}
           onChange={handleChange}
-          required
+          
         />
         <Input
           label="Address"
@@ -73,7 +73,7 @@ const BillingAddress = ({
           autoComplete="address-line1"
           value={formData["billing_address.address_1"]}
           onChange={handleChange}
-          required
+          
         />
         <Input
           label="Company"
@@ -88,7 +88,7 @@ const BillingAddress = ({
           autoComplete="postal-code"
           value={formData["billing_address.postal_code"]}
           onChange={handleChange}
-          required
+          
         />
         <Input
           label="City"
@@ -96,7 +96,7 @@ const BillingAddress = ({
           autoComplete="address-level2"
           value={formData["billing_address.city"]}
           onChange={handleChange}
-          required
+          
         />
         <CountrySelect
           name="billing_address.country_code"
@@ -104,20 +104,13 @@ const BillingAddress = ({
           region={cart?.region}
           value={formData["billing_address.country_code"]}
           onChange={handleChange}
-          required
+          
         />
         <Input
           label="State / Province"
           name="billing_address.province"
           autoComplete="address-level1"
           value={formData["billing_address.province"]}
-          onChange={handleChange}
-        />
-        <Input
-          label="Phone"
-          name="billing_address.phone"
-          autoComplete="tel"
-          value={formData["billing_address.phone"]}
           onChange={handleChange}
         />
       </div>
