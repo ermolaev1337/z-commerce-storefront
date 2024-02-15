@@ -45,7 +45,7 @@ const Item: React.FC<AccordionItemProps> = ({
   ...props
 }) => {
   return (
-    /* @ts-expect-error */
+    /* @ts-ignore */
     <AccordionPrimitive.Item
       {...props}
       className={clx(
@@ -54,14 +54,14 @@ const Item: React.FC<AccordionItemProps> = ({
         className
       )}
     >
-      {/* @ts-expect-error */}
+      {/* @ts-ignore */}
       <AccordionPrimitive.Header className="px-1">
         <div className="flex flex-col">
           <div className="flex w-full items-center justify-between">
             <div className="flex items-center gap-4">
               <Text className="text-ui-fg-subtle text-sm">{title}</Text>
             </div>
-            {/* @ts-expect-error */}
+            {/* @ts-ignore */}
             <AccordionPrimitive.Trigger>
               {customTrigger || <MorphingTrigger />}
             </AccordionPrimitive.Trigger>
@@ -73,7 +73,7 @@ const Item: React.FC<AccordionItemProps> = ({
           )}
         </div>
       </AccordionPrimitive.Header>
-      {/* @ts-expect-error */}
+      {/* @ts-ignore */}
       <AccordionPrimitive.Content
         forceMount={forceMountContent}
         className={clx(

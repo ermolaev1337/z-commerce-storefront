@@ -9,7 +9,7 @@ services:
       - 8001:8001
     networks:
       - network_medusa
-    command: bash -c "yarn build && yarn start"
+    command: bash -c "npm run build && npm run start"
 
 networks:
   network_medusa:
