@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  frontend_storefront:
+    container_name: frontend_storefront
+    env_file:
+      - .env
+    build: .
+    ports:
+      - 8001:8001
+    networks:
+      - network_medusa
+    command: bash -c "npm run build && npm run start"
+
+networks:
+  network_medusa:
+    name: network_medusa
+    external: true
