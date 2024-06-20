@@ -1,4 +1,4 @@
-import { Github } from "@medusajs/icons"
+import { Github, AcademicCapSolid } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
 
 const Hero = () => {
@@ -10,24 +10,36 @@ const Hero = () => {
             level="h1"
             className="text-3xl leading-10 text-ui-fg-base font-normal"
           >
-            Ecommerce Starter Template
+            z-Commerce
           </Heading>
           <Heading
             level="h2"
             className="text-3xl leading-10 text-ui-fg-subtle font-normal"
           >
-            Powered by Medusa and Next.js
+            Powered by Medusa, Next.js, Heimdall, Docker, and many more things
           </Heading>
         </span>
+        <span>
         <a
-          href="https://github.com/medusajs/nextjs-starter-medusa"
+          href="https://github.com/ermolaev1337/medusa-zkp"
           target="_blank"
         >
           <Button variant="secondary">
-            View on GitHub
+            GitHub
             <Github />
           </Button>
         </a>
+                    <span/>
+          <a
+          href="https://www.researchgate.net/publication/370595405_z-Commerce_Designing_a_data-minimizing_one-click_checkout_solution"
+          target="_blank"
+        >
+          <Button variant="secondary">
+            ResearchGate
+            <AcademicCapSolid />
+          </Button>
+        </a>
+        </span>
       </div>
     </div>
   )

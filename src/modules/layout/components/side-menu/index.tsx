@@ -11,8 +11,8 @@ import CountrySelect from "../country-select"
 
 const SideMenuItems = {
   Home: "/",
-  Store: "/store",
-  Search: "/search",
+  "z-Store": "/store",
+  // Search: "/search",
   Account: "/account",
   Cart: "/cart",
 }
@@ -84,7 +84,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         />
                       </div>
                       <Text className="flex justify-between txt-compact-small">
-                        © {new Date().getFullYear()} Medusa Store. All rights
+                        © {new Date().getFullYear()} z-Commerce Store. All rights
                         reserved.
                       </Text>
                     </div>
