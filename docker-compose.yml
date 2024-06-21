@@ -1,0 +1,24 @@
+services:
+
+  storefront:
+    restart: always
+    container_name: storefront
+    build:
+      dockerfile: Dockerfile
+      network: host
+    volumes:
+      - ./up.env:/app/.env # overwrite the .env from building
+    ports:
+      - 80:80 # for build & dev
+#    command: yarn run dev # for dev
+#    command: yarn start # for build
+    command: bash -c "yarn build && yarn start" # for build
+#    tty: true
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:80" ] # for build & dev
+    networks:
+      - heimdall-network
+
+networks:
+  heimdall-network:
+    external: true
