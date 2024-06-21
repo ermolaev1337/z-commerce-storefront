@@ -8,6 +8,7 @@ export function SubmitButton({
   children,
   variant = "primary",
   className,
+  disabled,
 }: {
   children: React.ReactNode
   variant?: "primary" | "secondary" | "transparent" | "danger" | undefined
@@ -22,6 +23,7 @@ export function SubmitButton({
       type="submit"
       isLoading={pending}
       variant={variant}
+      disabled={disabled}
     >
       {children}
     </Button>
