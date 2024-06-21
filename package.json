@@ -8,9 +8,9 @@
     "medusa-storefront"
   ],
   "scripts": {
-    "dev": "next dev -p 8001 --turbo",
+    "dev": "next dev -p 80 --turbo",
     "build": "next build",
-    "start": "next start -p 8001",
+    "start": "next start -p 80",
     "lint": "next lint",
     "cypress": "cypress open",
     "analyze": "ANALYZE=true next build"
@@ -20,6 +20,7 @@
     "@types/react": "17.0.40"
   },
   "dependencies": {
+    "react-use-websocket": "4.8.1",
     "@headlessui/react": "^1.6.1",
     "@hookform/error-message": "^2.0.0",
     "@medusajs/link-modules": "^0.2.3",
