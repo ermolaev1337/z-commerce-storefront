@@ -5,14 +5,25 @@ const store = require("./store.config.json")
  * @type {import('next').NextConfig}
  */
 const nextConfig = withStoreConfig({
-  // features: store.features,
-  // reactStrictMode: true,
+  features: store.features,
+  reactStrictMode: true,
   images: {
-    domains: ["localhost", "medusa", "localhost:9000","medusa:9000"],
     remotePatterns: [
       {
         protocol: "http",
         hostname: "localhost",
+      },
+      {
+        protocol: "http",
+        hostname: "medusa",
+      },
+      {
+        protocol: "http",
+        hostname: "medusa:9000",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost:9000",
       },
       {
         protocol: "https",
