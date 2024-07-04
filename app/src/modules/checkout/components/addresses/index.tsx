@@ -28,7 +28,7 @@ import medusaError from "@lib/util/medusa-error"
 import useWebSocket from 'react-use-websocket';
 import axios from 'axios';
 
-const WS_URL = 'ws://localhost:7777';
+const WS_URL = 'ws://localhost:17777';
 const CONTROLLER_URL = 'localhost:2222';
 
 
