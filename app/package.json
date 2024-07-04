@@ -20,6 +20,7 @@
     "@types/react": "17.0.40"
   },
   "dependencies": {
+    "sharp": "0.33.4",
     "axios": "1.7.2",
     "react-use-websocket": "4.8.1",
     "@headlessui/react": "^1.6.1",
