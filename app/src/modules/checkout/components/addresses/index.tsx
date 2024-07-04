@@ -97,23 +97,25 @@ const Addresses = ({
 
     useEffect(() => {
         if (lastMessage) {
-            const content = JSON.parse(lastMessage.data).output.content
-            setCheckoutContent(content)
-            console.debug("msg.data.output.content", content);
-            alert(JSON.stringify(content))
-            const data = JSON.parse(lastMessage.data)
-            if (data.output && data.output.content) {
-                console.debug("data.output.content", data.output.content)
-                setCheckoutContent(data.output.content)
-                alert(JSON.stringify(data.output.content))
-            } else if (data.error) {
-                console.error("data.error", data.error)
-                setCheckoutContent(data)
-                alert(JSON.stringify(data))
-            } else {
-                console.error("unknown data format", data)
+            try {
+                const content = JSON.parse(lastMessage.data).output.content
+                setCheckoutContent(content)
+                console.debug("msg.data.output.content", content);
+                const data = JSON.parse(lastMessage.data)
+                if (data.output && data.output.content) {
+                    console.debug("data.output.content", data.output.content)
+                    setCheckoutContent(data.output.content)
+                    alert(JSON.stringify(data.output.content))
+                } else if (data.error) {
+                    console.error("data.error", data.error)
+                    setCheckoutContent(data)
+                    alert(JSON.stringify(data))
+                } else {
+                    console.error("unknown data format", data)
+                }
+            }catch (e){
+                console.error(e)
             }
-
         }
     }, [lastMessage])
 
