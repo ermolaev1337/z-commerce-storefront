@@ -93,23 +93,17 @@ const Addresses = ({
         }
     });
 
-    const [checkoutContent, setCheckoutContent] = useState()//TODO use the data on the e-commerce frontend
-
     useEffect(() => {
         if (lastMessage) {
             try {
                 const content = JSON.parse(lastMessage.data).output.content
-                setCheckoutContent(content)
                 console.debug("msg.data.output.content", content);
                 const data = JSON.parse(lastMessage.data)
-                if (data.output && data.output.content) {
+                if (data.output && data.output.content && data.output.content.inbound) {
                     console.debug("data.output.content", data.output.content)
-                    setCheckoutContent(data.output.content)
-                    alert(JSON.stringify(data.output.content))
+                    setPoa(data.output.content.inbound)
                 } else if (data.error) {
                     console.error("data.error", data.error)
-                    setCheckoutContent(data)
-                    alert(JSON.stringify(data))
                 } else {
                     console.error("unknown data format", data)
                 }
