@@ -14,7 +14,6 @@ import {Heading, Text, useToggleState} from "@medusajs/ui"
 import Divider from "@modules/common/components/divider"
 import Spinner from "@modules/common/icons/spinner"
 
-import BillingAddress from "../billing_address"
 import ShippingAddress from "../shipping-address"
 import {setAddresses} from "../../actions"
 import {SubmitButton} from "../submit-button"
@@ -22,7 +21,6 @@ import {useFormState} from "react-dom"
 import {useState, useEffect} from "react"
 import ErrorMessage from "../error-message"
 import compareAddresses from "@lib/util/compare-addresses"
-import {Button} from "@medusajs/ui"
 import medusaError from "@lib/util/medusa-error"
 
 import useWebSocket from 'react-use-websocket';
@@ -138,7 +136,6 @@ const Addresses = ({
             </div>
             {isOpen ? (
                 <div>
-                    {/*<Button onClick={handleCheckoutWithWallet} className="mb-6">Proof of Age</Button>*/}
                     <form action={formAction} >{/*TODO: handle country-code and email in a better way */}
                         <div className="pb-8">
                             <ShippingAddress

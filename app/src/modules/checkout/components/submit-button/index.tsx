@@ -27,6 +27,7 @@ export function SubmitButton({
       isLoading={pending}
       variant={variant}
       disabled={disabled}
+      //@ts-ignore
       onClick={onClick}
     >
       {children}

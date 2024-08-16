@@ -1,7 +1,6 @@
 "use client"
 
 import { Heading, Text, clx } from "@medusajs/ui"
-import { useEffect } from "react"
 
 import PaymentButton from "../payment-button"
 import { useSearchParams } from "next/navigation"
@@ -17,13 +16,10 @@ const Review = ({
   const isOpen = searchParams.get("step") === "review"
 
   const previousStepsCompleted =
-    // cart.shipping_address && //TODO: fix the medusa flow without address
+    cart.shipping_address &&
     cart.shipping_methods.length > 0 &&
     cart.payment_session
 
-    useEffect(() => {
-        console.debug("useEffect(), cart",cart)
-    }, []);
   return (
     <div className="bg-white">
       <div className="flex flex-row items-center justify-between mb-6">
