@@ -1,5 +1,7 @@
+"use client"
+
 import {Order} from "@medusajs/medusa"
-import {Text} from "@medusajs/ui"
+import {Text, Button} from "@medusajs/ui"
 import * as process from "process";
 
 type OrderDetailsProps = {
@@ -14,18 +16,15 @@ const OrderDetails = ({order, showStatus}: OrderDetailsProps) => {
         return formatted.slice(0, 1).toUpperCase() + formatted.slice(1)
     }
 
+    const redirectToSelectedDelivery = () => {
+        const deliveryUrl = "http://localhost:1337?id=" + order.id
+        console.debug("deliveryUrl", deliveryUrl)
+        window.open(deliveryUrl, '_blank');
+    };
+
     return (
         <div>
-            <Text>
-                We have sent the order confirmation details to{" "}
-                <span className="text-ui-fg-medium-plus font-semibold">
-          {order.email}
-        </span>
-                . To finalize the delivery, <span className={"text-ui-fg-subtle txt-small"}><a
-                className={"hover:text-ui-fg-base txt-small-plus"} target={"_blank"}
-                href={process.env.DELIVERY_SERVICE_REDIRECTION_ENDPOINT + "?id=" + order.id}>provide the Proof of Address to the delivery service</a></span> right
-                now or follow the instruction in the email.
-            </Text>
+            <Button onClick={redirectToSelectedDelivery} className="mb-6">Proof of Address</Button>
             <Text className="mt-2">
                 Order date: {new Date(order.created_at).toDateString()}
             </Text>
