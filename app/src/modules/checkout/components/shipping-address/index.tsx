@@ -71,8 +71,10 @@ const ShippingAddress = ({
     })
   }
 
+
   return (
     <>
+    <div style={{display: "none"}}>
       {customer && (addressesInRegion?.length || 0) > 0 && (
         <Container className="mb-6 flex flex-col gap-y-4 p-5">
           <p className="text-small-regular">
@@ -86,9 +88,9 @@ const ShippingAddress = ({
           name="shipping_address.country_code"
           autoComplete="country"
           region={cart?.region}
-          value={formData["shipping_address.country_code"]}
+          // value={formData["shipping_address.country_code"]}
+          value={"lu"}
           onChange={handleChange}
-
         />
         <Input
             label="Email"
@@ -96,11 +98,13 @@ const ShippingAddress = ({
             type="email"
             title="Enter a valid email address."
             autoComplete="email"
-            value={formData.email}
+            // value={formData.email}
+            value={"test@test.test"}
             onChange={handleChange}
             required
         />
       </div>
+    </div>
     </>
   )
 }

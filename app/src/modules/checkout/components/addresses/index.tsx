@@ -83,13 +83,14 @@ const Addresses = ({
 
     };
 
+
     const {lastMessage} = useWebSocket(WS_URL, {
         onOpen: () => {
             console.debug('WebSocket connection established.');
         },
         onMessage: (msg) => {
-            setPoa(true)
             console.debug("msg", msg);
+            router.push(pathname + "?step=delivery")
         }
     });
 
@@ -137,15 +138,15 @@ const Addresses = ({
             </div>
             {isOpen ? (
                 <div>
-                    <Button onClick={handleCheckoutWithWallet} className="mb-6">Proof of Age</Button>
-                    <form action={formAction}>
+                    {/*<Button onClick={handleCheckoutWithWallet} className="mb-6">Proof of Age</Button>*/}
+                    <form action={formAction} >{/*TODO: handle country-code and email in a better way */}
                         <div className="pb-8">
                             <ShippingAddress
                                 customer={customer}
                                 countryCode={countryCode}
                                 cart={cart}
                             />
-                            <SubmitButton disabled={!poa} className="mt-6">Continue to delivery</SubmitButton>
+                            <SubmitButton onClick={handleCheckoutWithWallet} className="mt-6">Proof of Age</SubmitButton>
                             <ErrorMessage error={message}/>
                         </div>
                     </form>
@@ -153,30 +154,31 @@ const Addresses = ({
             ) : (
                 <div>
                     <div className="text-small-regular">
-                        {cart && cart.shipping_address ? (
+                        {/*{cart && cart.shipping_address ? (*/}
+                        {cart ? (
                             <div className="flex items-start gap-x-8">
                                 <div className="flex items-start gap-x-1 w-full">
-                                    <div className="flex flex-col w-1/3">
-                                        <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                                            Country Code
-                                        </Text>
-                                        <Text className="txt-medium text-ui-fg-subtle">
-                                            {cart.shipping_address.country_code?.toUpperCase()}
-                                        </Text>
-                                    </div>
+                                    {/*<div className="flex flex-col w-1/3">*/}
+                                    {/*    <Text className="txt-medium-plus text-ui-fg-base mb-1">*/}
+                                    {/*        Country Code*/}
+                                    {/*    </Text>*/}
+                                    {/*    <Text className="txt-medium text-ui-fg-subtle">*/}
+                                    {/*        {cart.shipping_address.country_code?.toUpperCase()}*/}
+                                    {/*    </Text>*/}
+                                    {/*</div>*/}
+
+                                    {/*<div className="flex flex-col w-1/3 ">*/}
+                                    {/*    <Text className="txt-medium-plus text-ui-fg-base mb-1">*/}
+                                    {/*        Email*/}
+                                    {/*    </Text>*/}
+                                    {/*    <Text className="txt-medium text-ui-fg-subtle">*/}
+                                    {/*        {cart.email}*/}
+                                    {/*    </Text>*/}
+                                    {/*</div>*/}
 
                                     <div className="flex flex-col w-1/3 ">
                                         <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                                            Email
-                                        </Text>
-                                        <Text className="txt-medium text-ui-fg-subtle">
-                                            {cart.email}
-                                        </Text>
-                                    </div>
-
-                                    <div className="flex flex-col w-1/3 ">
-                                        <Text className="txt-medium-plus text-ui-fg-base mb-1">
-                                            Proof of Age
+                                            Older than 18 y.o.
                                         </Text>
                                         <Text className="txt-medium text-ui-fg-subtle">
                                             {poa ? "Yes" : "No"}

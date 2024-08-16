@@ -36,8 +36,8 @@ export default function OrderCompletedTemplate({
           </Heading>
           <Items items={order.items} region={order.region} />
           <CartTotals data={order} />
-          <ShippingDetails order={order} />
-          <PaymentDetails order={order} />
+          {/*<ShippingDetails order={order} />*/}
+          {/*<PaymentDetails order={order} />*/}
           <Help />
         </div>
       </div>

@@ -5,11 +5,13 @@ import React from "react"
 import { useFormStatus } from "react-dom"
 
 export function SubmitButton({
+  onClick,
   children,
   variant = "primary",
   className,
   disabled = false,
 }: {
+  onClick?: Function,
   children: React.ReactNode
   variant?: "primary" | "secondary" | "transparent" | "danger" | undefined
   className?: string
@@ -25,6 +27,7 @@ export function SubmitButton({
       isLoading={pending}
       variant={variant}
       disabled={disabled}
+      onClick={onClick}
     >
       {children}
     </Button>
