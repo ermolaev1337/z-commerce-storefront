@@ -11,6 +11,10 @@ const nextConfig = withStoreConfig({
     remotePatterns: [
       {
         protocol: "http",
+        hostname: "10.240.5.163",
+      },
+      {
+        protocol: "http",
         hostname: "localhost",
       },
       {

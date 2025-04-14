@@ -68,5 +68,5 @@ export async function updateRegion(countryCode: string, currentPath: string) {
 
 export async function resetOnboardingState(orderId: string) {
   cookies().set("_medusa_onboarding", "false", { maxAge: -1 })
-  redirect(`http://localhost:7001/a/orders/${orderId}`)
+  redirect(`http://10.240.5.163:7001/a/orders/${orderId}`)
 }

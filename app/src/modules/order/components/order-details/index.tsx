@@ -17,7 +17,7 @@ const OrderDetails = ({order, showStatus}: OrderDetailsProps) => {
     }
 
     const redirectToSelectedDelivery = () => {
-        const deliveryUrl = "http://localhost:1337?id=" + order.id
+        const deliveryUrl = "http://10.240.5.163:1337?id=" + order.id
         console.debug("deliveryUrl", deliveryUrl)
         window.open(deliveryUrl, '_blank');
     };

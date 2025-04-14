@@ -26,8 +26,8 @@ import medusaError from "@lib/util/medusa-error"
 import useWebSocket from 'react-use-websocket';
 import axios from 'axios';
 
-const WS_URL = 'ws://localhost:17777';
-const CONTROLLER_URL = 'localhost:2222';
+const WS_URL = 'ws://10.240.5.163:17777';
+const CONTROLLER_URL = '10.240.5.163:2222';
 
 
 const Addresses = ({
@@ -76,7 +76,7 @@ const Addresses = ({
             //@ts-ignore
             console.debug("connectionInvitation.data", connectionInvitation.data)
             //@ts-ignore
-            window.open("http://localhost:19006?data=" + JSON.stringify(connectionInvitation.data), '_blank');
+            window.open("http://10.240.5.163:19006?data=" + JSON.stringify(connectionInvitation.data), '_blank');
         }
 
     };
