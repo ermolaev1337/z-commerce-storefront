@@ -1,3 +1,18 @@
+# z-commerce storefront
+
+The shop front end of [z-Commerce](https://github.com/ermolaev1337/z-commerce), where the
+customer proves their age without disclosing their date of birth. It is not meant to run
+on its own — use `start.sh` in the parent repository.
+
+Built on the Medusa Next.js starter, with the checkout reworked: the billing and shipping
+address steps were removed, and an age verification step was added. At that step the page
+opens a websocket to its relay and waits for the controller to report that the wallet's
+zero-knowledge proof has been verified; only then does the submit button become active.
+
+Runs on [http://localhost](http://localhost). The upstream starter documentation follows.
+
+---
+
 <p align="center">
   <a href="https://www.medusajs.com">
   <picture>
