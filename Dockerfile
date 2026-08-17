@@ -1,8 +1,8 @@
 FROM node:20
 
-COPY ./app/package.json /app/package.json
+COPY ./app/package.json ./app/yarn.lock /app/
 WORKDIR /app
-RUN yarn
+RUN yarn --frozen-lockfile
 
 COPY ./app/ /app/
 
